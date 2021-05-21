@@ -1,0 +1,72 @@
+.panel {
+    width:300px;
+    height:400px;
+    margin-bottom: 100px;
+    border:5px solid #000;
+}
+
+.organization {
+    text-align: right;
+    padding-right: 10%;
+    font-size: larger;
+    font-family: 'Trebuchet MS';
+
+}
+.nameField{
+    margin-bottom: 200px;
+    font-family: 'Trebuchet MS';
+    padding: 15px;
+    font-size: larger;
+    text-align: left;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.fields {
+    font-family: 'Trebuchet MS';
+    position: relative;
+
+    top: -150px;
+    margin-bottom: -80px;
+}
+
+.BarcodeType {
+    display: block;
+    size: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 110px;
+    height: 0px;
+
+}
+
+.colorParagraph {
+    font-family: 'Trebuchet MS';
+}
+
+form {
+    font-family: 'Trebuchet MS';
+}
+
+input {
+    font-family: 'Trebuchet MS';
+}
+
+button {
+    font-family: 'Trebuchet MS';
+}
+
+label {
+    font-family: 'Trebuchet MS';
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #999999;
+}

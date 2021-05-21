@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Pass Demo</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/main.css"/> -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QEDE3X21DN"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <script>
+    function radioButtonSel(x)
+    {
+        if (x == 0)
+            document.getElementById('barcode').style.display = 'block';
+
+        else
+            document.getElementById('barcode').style.display = 'none';
+
+        if (x == 1)
+            document.getElementById('qrcode').style.display = 'block';
+
+        else
+            document.getElementById('qrcode').style.display = 'none';
+    }
+    </script>
+
+</head>
+<body>
+    <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">MOBIL-ID</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+          <li><a class="nav-link scrollto" href="index.html#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="index.html#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="index.html#team">Team</a></li>
+          <li><a class="nav-link scrollto active" href="demo.html">Demo</a></li>
+
+          <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="index.html#about">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <form>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+            <label for="org">Organization Name</label>
+            <input type="text" name="org" id="org" placeholder="Name of company" required>
+        </div>
+        <br>
+        <div>
+            <label for="name" >Name</label>
+            <input type="text" name="name" id="name" placeholder="Your Name"required>
+        </div>
+        <br>
+
+        <div>
+            <label for="eagle">Eagle Bucks</label>
+            <input type="text" name="eagleBucks" id="eagle" placeholder="Number of Eeagle Bucks" required>
+        </div>
+        <br>
+        <div>
+            <label for="meals">Meals remaining</label>
+            <input type="text" name="mealsRem" id="meals" placeholder="Number of meals " required>
+        </div>
+        <br>
+        <div>
+            <label for="ethos">Kudos</label>
+            <input type="text" name="kudosAmount" id="ethos" placeholder="Number of Kudos earned " required>
+        </div>
+
+
+    <br>
+    <br>
+    <div>
+        <label >Barcode</label>
+        <input type="radio" onclick="radioButtonSel(0)" name="BarcodeType" value="barcode">
+    </div>
+        <label >QR Code</label>
+        <input type="radio" onclick="radioButtonSel(1)" name="BarcodeType" value="qr">
+        <br>
+    <div class="colorParagraph">
+        <p class="colorParagraph">Pick color of pass: </p>
+    </div>
+    <div class="color-picker"></div>
+    <br>
+    <button class="subButton" onclick="refreshPage()" type="reset">Reset</button>
+
+    </form>
+    <button class="subButton" id="submitBtn" onclick="changeText()">Submit</button>
+
+    <script>
+    function refreshPage(){
+        window.location.reload();
+    }
+    </script>
+
+
+    <div class="panel centered" id="panel">
+    <div class="organization" id="OrgName"></div>
+    <div class="nameField" id="nameField"></div>
+    <div class="fields">
+        <table>
+            <tr>
+                <th>
+                    Eagle Bucks
+                </th>
+                <th>
+                    Meals Remaining
+                </th>
+
+                <th>
+                    Kudos
+                </th>
+            </tr>
+            <tr>
+                <th id="EeagleBucks">
+
+                </th>
+
+                <th id="Meals">
+
+                </th>
+                <th id="Kudos">
+
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="BarcodeType">
+        <img src="assets/img/demo/barcode.jpg" alt="barcode" id="barcode" width="100" height="100" style="display: none;" >
+        <img src="assets/img/demo//qrcode.png" alt="qrcode" id="qrcode" width="100" height="100" style="display: none;">
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
+    </div>
+    </div>
+   </section><!-- End Hero -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script>
+
+    let panel = document.getElementById('panel')
+
+    const pickr = Pickr.create({
+    el: '.color-picker',
+    theme: 'classic', // or 'monolith', or 'nano'
+
+    swatches: [
+        'rgba(244, 67, 54, 1)',
+        'rgba(233, 30, 99, 0.95)',
+        'rgba(156, 39, 176, 0.9)',
+        'rgba(103, 58, 183, 0.85)',
+        'rgba(63, 81, 181, 0.8)',
+        'rgba(33, 150, 243, 0.75)',
+        'rgba(3, 169, 244, 0.7)',
+        'rgba(0, 188, 212, 0.7)',
+        'rgba(0, 150, 136, 0.75)',
+        'rgba(76, 175, 80, 0.8)',
+        'rgba(139, 195, 74, 0.85)',
+        'rgba(205, 220, 57, 0.9)',
+        'rgba(255, 235, 59, 0.95)',
+        'rgba(255, 193, 7, 1)'
+    ],
+
+    components: {
+
+        // Main components
+        preview: true,
+        opacity: true,
+        hue: true,
+
+        // Input / output Options
+        interaction: {
+            hex: true,
+            rgba: true,
+            hsla: false,
+            hsva: false,
+            cmyk: false,
+            input: true,
+            clear: true,
+            save: true
+        }
+    }
+});
+
+pickr.on('change', (...args) => {
+    let color = args[0].toRGBA()
+    console.log(color);
+    this.panel.style.backgroundColor = `rgba(${color[0]},${color[1]},${color[2]},${color[3]})`
+});
+
+</script>
+
+<script type="text/javascript">
+    function changeText()
+    {
+        var organizationName = document.getElementById("org").value;
+        document.getElementById("OrgName").textContent = organizationName;
+        var personalName = document.getElementById("name").value;
+        document.getElementById("nameField").textContent = personalName;
+
+        var eagleBucks = document.getElementById("eagle").value;
+        var mealsRemaining = document.getElementById("meals").value;
+        var ethos = document.getElementById("ethos").value;
+
+        document.getElementById("EeagleBucks").textContent = "$" + eagleBucks;
+        document.getElementById("Meals").textContent = mealsRemaining;
+        document.getElementById("Kudos").textContent = mealsRemaining;
+
+
+
+    }
+
+</script>
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+
+  <div class="footer-newsletter">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <h4>Join Our Newsletter</h4>
+          <p>Join to hear updates and improvements to MOBIL-ID</p>
+          <form action="" method="post">
+            <input type="email" name="email"><input type="submit" value="Subscribe">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h3>Arsha</h3>
+          <p>
+            A108 Adam Street <br>
+            New York, NY 535022<br>
+            United States <br><br>
+            <strong>Phone:</strong> +1 5589 55488 55<br>
+            <strong>Email:</strong> info@example.com<br>
+          </p>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Our Social Networks</h4>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+          <div class="social-links mt-3">
+            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-bottom clearfix">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Arsha</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </div>
+</footer><!-- End Footer -->
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
