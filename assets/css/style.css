@@ -1811,7 +1811,7 @@ section {
     margin-left: 700px;
     margin-bottom: 100px;
     border:5px solid #000;
-    position: fixed;
+    position: relative;
 }
 
 .organization {
@@ -1852,7 +1852,6 @@ section {
     width: 110px;
     height: 0px;
     position: relative;
-
 }
 
 .colorParagraph {
