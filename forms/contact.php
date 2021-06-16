@@ -18,7 +18,8 @@
   $contact->add_message( $_POST['name'], 'From');
   $contact->add_message( $_POST['email'], 'Email');
   $contact->add_message( $_POST['message'], 'Message', 10);
+  $msg = wordwrap($_POST['message'], 'Message', 10)
 
-  mail($to, $subject, $_POST['message'])
+  mail("zach@mobil-id.com", $subject, $msg)
   echo $contact->send();
 ?>
